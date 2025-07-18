@@ -183,7 +183,7 @@ fun LoginScreen(onLogin: (User) -> Unit) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            "Universidad App",
+            "CAMPUS GO",
             color = Color.White,
             fontSize = 28.sp,
             fontWeight = FontWeight.Bold
@@ -228,7 +228,7 @@ fun LoginScreen(onLogin: (User) -> Unit) {
         Button(
             onClick = {
                 // Simulación de login
-                onLogin(User("123", "Juan Pérez", "Ingeniería en Sistemas", 6))
+                onLogin(User("123", "Samuel Ramos Alvarez", "Ingeniería en sistemas", 9))
             },
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(
@@ -236,7 +236,7 @@ fun LoginScreen(onLogin: (User) -> Unit) {
                 contentColor = Color(0xFF1976D2)
             )
         ) {
-            Text("Iniciar Sesión", fontSize = 16.sp)
+            Text("Iniciar sesión", fontSize = 16.sp)
         }
     }
 }
@@ -265,7 +265,7 @@ fun HomeScreen(navController: NavController, user: User?) {
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    "${user?.career} - ${user?.semester}° Semestre",
+                    "${user?.career} - ${user?.semester}° Cuatrimestre",
                     color = Color.White.copy(alpha = 0.9f),
                     fontSize = 14.sp
                 )
@@ -306,7 +306,7 @@ fun HomeScreen(navController: NavController, user: User?) {
 
             item {
                 MenuCard(
-                    title = "Chat por Carrera",
+                    title = "Chat por carrera",
                     description = "Interactúa con otros estudiantes",
                     icon = Icons.AutoMirrored.Filled.Chat,
                     onClick = { navController.navigate("chat") }
@@ -366,9 +366,9 @@ fun MenuCard(
 @Composable
 fun SchedulesScreen(navController: NavController) {
     val schedules = listOf(
-        Schedule("Programación Móvil", "08:00 - 10:00", "Aula 101", "Dr. García"),
-        Schedule("Base de Datos", "10:00 - 12:00", "Aula 102", "Dra. López"),
-        Schedule("Ingeniería de Software", "14:00 - 16:00", "Aula 103", "Dr. Martínez"),
+        Schedule("Aplicaciones móviles", "08:00 - 10:00", "Aula 101", "JUAN CARLOS PEREZ CADENA"),
+        Schedule("Sistemas inteligentes", "10:00 - 12:00", "Aula 102", "JOSE MARTINEZ MORALES"),
+        Schedule("Implantación y mantenimiento de sistemas", "14:00 - 16:00", "Aula 103", "RAUL ROLANDO JARA MONTES"),
         Schedule("Redes", "16:00 - 18:00", "Aula 104", "Ing. Rodríguez")
     )
 
@@ -580,12 +580,12 @@ fun MenuItemCard(item: MenuItem, onAddToCart: () -> Unit) {
 @Composable
 fun GradesScreen(navController: NavController) {
     val grades = listOf(
-        Grade("Programación Móvil", 9.5, "6° Semestre"),
-        Grade("Base de Datos", 8.8, "6° Semestre"),
-        Grade("Ingeniería de Software", 9.2, "6° Semestre"),
-        Grade("Redes", 8.5, "6° Semestre"),
-        Grade("Algoritmos", 9.0, "5° Semestre"),
-        Grade("Programación Web", 9.3, "5° Semestre")
+        Grade("Programación Móvil", 9.5, "6° Cuatrimestre"),
+        Grade("Base de Datos", 8.8, "6° Cuatrimestre"),
+        Grade("Ingeniería de Software", 9.2, "6° Cuatrimestre"),
+        Grade("Redes", 8.5, "6° Cuatrimestre"),
+        Grade("Algoritmos", 9.0, "5° Cuatrimestre"),
+        Grade("Programación Web", 9.3, "5° Cuatrimestre")
     )
 
     Column(
@@ -690,10 +690,10 @@ fun GradeCard(grade: Grade) {
 @Composable
 fun ChatScreen(navController: NavController) {
     var messages by remember { mutableStateOf(listOf(
-        ChatMessage("Ana García", "¡Hola! ¿Alguien tiene las notas de programación?", "10:30"),
-        ChatMessage("Carlos López", "Sí, te las envío por privado", "10:32"),
-        ChatMessage("María Jiménez", "¿Cuándo es el examen de bases de datos?", "10:35"),
-        ChatMessage("José Martín", "El próximo viernes a las 2pm", "10:37")
+        ChatMessage("Danny", "¡Hola! ¿Alguien tiene las notas de programación?", "10:30"),
+        ChatMessage("Charles", "Sí, te las envío por privado", "10:32"),
+        ChatMessage("Gael", "¿Cuándo es el examen de bases de datos?", "10:35"),
+        ChatMessage("Angel", "El próximo viernes a las 2pm", "10:37")
     )) }
     var newMessage by remember { mutableStateOf("") }
 
